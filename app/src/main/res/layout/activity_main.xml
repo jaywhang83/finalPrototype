@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/breakTime"
+        android:layout_width="318dp"
+        android:layout_height="217dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="84dp"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workTime" />
+
+    <TextView
+        android:id="@+id/breakSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="130dp"
+        android:gravity="center"
+        android:text="Seconds"
+        app:layout_constraintBottom_toBottomOf="@+id/breakTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/breakMinutes"
+        app:layout_constraintTop_toBottomOf="@+id/workTime" />
+
+    <TextView
+        android:id="@+id/breakMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginBottom="130dp"
+        android:gravity="center"
+        android:text="Minutes"
+        app:layout_constraintBottom_toBottomOf="@+id/breakTime"
+        app:layout_constraintEnd_toStartOf="@+id/breakSeconds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workTime" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/teal_700"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation" />
+
+    <TextView
+        android:id="@+id/workTime"
+        android:layout_width="318dp"
+        android:layout_height="217dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="85dp"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:text="00:00:00"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/breakTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/workTimeSeconds"
+        android:layout_width="50dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="135dp"
+        android:gravity="center"
+        android:text="Seconds"
+        app:layout_constraintBottom_toBottomOf="@+id/workTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/workMinutes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/workMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="135dp"
+        android:gravity="center"
+        android:text="Minutes"
+        app:layout_constraintBottom_toBottomOf="@+id/workTime"
+        app:layout_constraintEnd_toStartOf="@+id/workTimeSeconds"
+        app:layout_constraintStart_toEndOf="@+id/workHours"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/workHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="135dp"
+        android:gravity="center"
+        android:text="Hours"
+        app:layout_constraintBottom_toBottomOf="@+id/workTime"
+        app:layout_constraintEnd_toStartOf="@+id/workMinutes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/startWorkTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:text="START"
+        android:backgroundTint="@android:color/holo_green_light"
+        app:layout_constraintBottom_toBottomOf="@+id/workTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/workTime"
+        app:cornerRadius="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
